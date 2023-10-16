@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular&display=swap");
+@import url('reset.css');
+
+body {
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 15px;
+	background-color: #23242a;
+	font-size: 18px;
+}
+
+.dropdown-menu {
+	position: relative;
+}
+
+.dropdown-menu__btn {
+	position: relative;
+	display: block;
+	min-width: 250px;
+	padding: 15px;
+	text-align: left;
+	background-color: #2a2f3b;
+	border: 2px solid #2a2f3b;
+	border-radius: 8px;
+	font-family: inherit;
+	font-size: inherit;
+	color: #fff;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out;
+}
+
+.dropdown-menu__btn:hover {
+	background-color: #323741;
+}
+
+.dropdown-menu__btn--active {
+	border: 2px solid #26489a;
+}
+
+.dropdown-menu__btn--active.dropdown-menu__btn--active::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu__btn::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid #fff;
+	transition: transform .3s ease-in-out;
+	pointer-events: none;
+}
+
+.dropdown-menu__list {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 110%;
+	width: 100%;
+	padding: 10px;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	background-color: #323741;
+	border: 1px solid #363a43;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.dropdown-menu__list.dropdown-menu__list--active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.dropdown-menu__list-item {
+	padding: 15px 20px;
+	border-radius: 8px;
+	color: #fff;
+	cursor: pointer;
+	transition: background .2s ease-in-out;
+}
+
+.dropdown-menu__list-item:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.dropdown-menu__list-item:hover {
+	background-color: #2a2d35;
+}
+
+.dropdown-menu__list-item--active {
+	background-color: #2a2d35;
+}
+
+.dropdown-menu__input {
+	display: none;
+}
